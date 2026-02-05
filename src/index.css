@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --primary-yellow: #facd00;
+  --deep-black: #000000;
+}
+
+* {
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-yellow);
+  border-radius: 4px;
+}
+
+.glass-header {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(250, 205, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.hero-gradient {
+  background: radial-gradient(
+    circle at top left,
+    rgba(250, 205, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
+.dark-mode .hero-gradient {
+  background: radial-gradient(
+    circle at top left,
+    rgba(250, 205, 0, 0.08) 0%,
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
+.hover-card {
+  cursor: pointer;
+  border-radius: 16px !important;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(250, 205, 0, 0.1) !important;
+}
+
+.dark-mode .hover-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.ant-btn {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+}
+
+.ant-btn-primary:hover {
+  transform: scale(1.02);
+  filter: brightness(1.1);
+}
+
+/* Carousel Custom Styles */
+.ant-carousel .slick-dots li {
+  margin: 0 4px;
+  vertical-align: middle;
+}
+
+.ant-carousel .slick-dots li button {
+  background: var(--primary-yellow) !important;
+  opacity: 0.2;
+  height: 6px !important;
+  border-radius: 10px !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-carousel .slick-dots li.slick-active {
+  width: 32px !important;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+  background: var(--primary-yellow) !important;
+  opacity: 1;
+  width: 100% !important;
+  height: 6px !important;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+  z-index: 10;
+  width: 50px !important;
+  height: 50px !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Aggressively hide any default slick or antd arrows */
+.ant-carousel .slick-prev::before,
+.ant-carousel .slick-next::before,
+.ant-carousel .slick-prev::after,
+.ant-carousel .slick-next::after {
+  display: none !important;
+  content: "" !important;
+  font-family: none !important;
+}
+
+.ant-carousel .slick-prev:hover,
+.ant-carousel .slick-next:hover {
+  /* Removed aggressive background fill to allow framer-motion styles */
+  border-color: rgba(250, 205, 0, 0.5) !important;
+}
+
+.ant-carousel .slick-prev {
+  left: 30px !important;
+}
+
+.ant-carousel .slick-next {
+  right: 30px !important;
+}
+
+.secondary-button:hover {
+  border-color: var(--primary-yellow) !important;
+  color: var(--primary-yellow) !important;
+}
+
+/* Shine Effect Animation */
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.shine-effect:hover::after {
+  left: 100%;
+  top: 100%;
+  opacity: 1;
+}
+
+.project-action-btn:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 24px rgba(250, 205, 0, 0.4) !important;
+}
