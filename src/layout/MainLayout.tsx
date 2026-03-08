@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Layout, Menu, Button, Drawer } from "antd";
 import { MenuOutlined } from "@ant-design/icons";
 import ThemeToggle from "../components/ThemeToggle";
-import { primaryYellow } from "../theme/themeConfig";
+
 
 const { Header, Content, Footer } = Layout;
 
@@ -50,29 +50,28 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          padding: "0 24px",
+          height: "auto",
+          padding: "8px 24px",
           background: isDarkMode ? "#000000" : "#ffffff",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
-          <div
+          <img
+            src="/Logo.png"
+            alt="ConstrucCaribe AC"
             style={{
-              fontSize: "24px",
-              fontWeight: 800,
-              color: primaryYellow,
-              letterSpacing: "-1px",
+              height: "100px",
+              width: "auto",
               cursor: "pointer",
               transition: "transform 0.3s ease",
+              objectFit: "contain",
             }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.transform = "scale(1.05)")
             }
             onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
             onClick={() => setPath("home")}
-          >
-            CONSTRUC
-            <span style={{ color: isDarkMode ? "#fff" : "#000" }}>CARIBE</span>
-          </div>
+          />
 
           <Menu
             mode="horizontal"
